@@ -1,22 +1,121 @@
-:root {
+
+@import url(https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap&#39);
+
+:root { 
     --cor-principal: #6E859F;
     --cor-secundaria: #284260;
     --cor-destaque: #C92BFC;
+    --gradiente: linear-gradient(135deg, #6E859F, #C92BFC);
+    --gradiente-dark: linear-gradient(135deg, #284260, #6E859F);
 }
 
 body {
     font-family: 'Chakra Petch', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Cabeçalho com gradiente */
+header {
+    background: var(--gradiente);
+    color: #fff;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+header h1 {
+    color: #fff;
+}
+header p.lead {
+    font-size: 1.2rem;
+    color: #e1e1e1;
+}
+header .badge {
+    background: rgba(255,255,255,0.2) !important;
+    border: 1px solid #fff;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(255,255,255,0.4);
+    transition: transform 0.2s ease;
+}
+header .badge:hover {
+    transform: scale(1.1);
+}
+
+/* Títulos */
 h1, h2, h5 {
     color: var(--cor-secundaria);
     font-weight: 700;
 }
 
-footer a {
-    color: var(--cor-principal)
+/* Cartões modernos */
+.card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.card-title {
+    color: var(--cor-secundaria);
+}
+.card img {
+    object-fit: cover;
 }
 
+/* Botões */
+.btn-link {
+    color: var(--cor-destaque);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.btn-link:hover {
+    color: #a11ecf;
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+
+/* Modal com borda brilhante */
+.modal-content {
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(201,43,252,0.4);
+}
+.modal-header {
+    background: var(--gradiente-dark);
+    color: #fff;
+    border-bottom: none;
+}
+.modal-footer a {
+    color: var(--cor-destaque);
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+.modal-footer a:hover {
+    color: #a11ecf;
+}
+
+/* Rodapé com gradiente escuro */
+footer {
+    background: var(--gradiente-dark);
+    color: #fff;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+    text-align: center;
+}
+footer a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 footer a:hover {
     color: var(--cor-destaque);
 }
